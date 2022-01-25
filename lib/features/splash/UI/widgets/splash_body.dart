@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:fruits_market/core/utils/size_config.dart';
-import 'package:fruits_market/features/onBoarding/presentation/on_boarding_view.dart';
+import 'package:fruits_market/features/onBoarding/UI/on_boarding_view.dart';
 import 'package:get/get.dart';
 import 'package:get/get_navigation/src/extension_navigation.dart';
 

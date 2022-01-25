@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:fruits_market/features/onBoarding/presentation/widgets/page_view_item.dart';
+import 'package:fruits_market/features/onBoarding/UI/widgets/page_view_item.dart';
 
 class WidgetPageView extends StatelessWidget {
   const WidgetPageView({Key? key,@required this.pageController}) : super(key: key);

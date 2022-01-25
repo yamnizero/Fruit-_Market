@@ -4,6 +4,8 @@ import 'package:fruits_market/core/constants.dart';
 import 'package:fruits_market/core/space_widget.dart';
 import 'package:fruits_market/core/utils/size_config.dart';
 import 'package:fruits_market/core/widgets/widget_buttons.dart';
+import 'package:fruits_market/features/Auth/UI/pages/complete_information/complete_information_view.dart';
+import 'package:get/get.dart';
 
 class LoginViewBody extends StatelessWidget {
   const LoginViewBody({Key? key}) : super(key: key);
@@ -27,13 +29,20 @@ class LoginViewBody extends StatelessWidget {
         ),
         const  Expanded(child: SizedBox()),
         Row(
-          children: const [
+          children:  [
             Flexible(
                 flex: 1,
                 child: Padding(
-                  padding: EdgeInsets.symmetric(horizontal: 8),
+                  padding: const EdgeInsets.symmetric(horizontal: 8),
                   child: WidgetButtonWithIcon(
-                    color: Color(0xFFdb3236),
+                    onTap: ()
+                    {
+                      Get.to(()=> const CompleteInformationView(),
+                      duration: const Duration(milliseconds: 500),
+                        transition: Transition.rightToLeft
+                      );
+                    },
+                    color: const Color(0xFFdb3236),
                       iconData:FontAwesomeIcons.googlePlusG,
                     text:'Log in with'
                   ),
@@ -41,9 +50,16 @@ class LoginViewBody extends StatelessWidget {
             ),
             Flexible(
                 flex: 1,
-                child: Padding(
-                  padding: EdgeInsets.symmetric(horizontal: 8),
-                  child: WidgetButtonWithIcon(
+                child:  Padding(
+                  padding: const EdgeInsets.symmetric(horizontal: 8),
+                  child:  WidgetButtonWithIcon(
+                      onTap: ()
+                      {
+                        Get.to(()=> const CompleteInformationView(),
+                            duration: const Duration(milliseconds: 500),
+                            transition: Transition.rightToLeft
+                        );
+                      },
                     color: Colors.blue,
                     iconData:FontAwesomeIcons.facebookF,
                     text:'Log in with'

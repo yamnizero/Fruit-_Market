@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:fruits_market/core/utils/size_config.dart';
 import 'package:fruits_market/core/widgets/widget_buttons.dart';
+import 'package:fruits_market/features/Auth/presentation/pages/login/login_view.dart';
+import 'package:get/get.dart';
 
 import 'widget_dots_indicator.dart';
 import 'widget_page_view.dart';
@@ -15,7 +17,6 @@ class OnBoardingBody extends StatefulWidget {
 class _OnBoardingBodyState extends State<OnBoardingBody>
 {
    PageController? pageController;
-
   @override
   void initState() {
     pageController = PageController(
@@ -23,7 +24,6 @@ class _OnBoardingBodyState extends State<OnBoardingBody>
     )..addListener(()
     {
       setState(() {
-
       });
     });
     super.initState();
@@ -66,6 +66,20 @@ class _OnBoardingBodyState extends State<OnBoardingBody>
             right: SizeConfig.defaultSize! * 10,
             bottom: SizeConfig.defaultSize! * 10,
             child:  WidgetGeneralButton(
+              onTap: ()
+              {
+                if(pageController!.page! < 2) {
+                  pageController?.nextPage(
+                      duration: const Duration(milliseconds: 500),
+                      curve: Curves.easeIn,
+                  );
+                }else{
+                  Get.to(()=> const LoginView(),
+                      transition: Transition.rightToLeft,
+                      duration: const Duration(milliseconds: 500),
+                  );
+                }
+              },
               text: pageController!.hasClients ? (pageController?.page == 2 ? 'Get started' : 'Next') : 'Next' ,
             ),
         ),
